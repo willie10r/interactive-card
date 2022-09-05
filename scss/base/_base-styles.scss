@@ -1,1 +1,8 @@
 @use '../utilities' as var;
+
+.before {
+    display: block;
+}
+.after {
+    display: none;
+}

@@ -13,24 +13,53 @@
     <title>Frontend Mentor | Interactive card details form</title>
   </head>
   <body>
-    <heder> 0000 0000 0000 0000 Jane Appleseed 00/00 000 </heder>
-    <main>
-      <h2>Cardholder Name</h2>
-      <input />
-      e.g. Jane Appleseed
-
-      <h2>Card Number</h2>
-      <input /> e.g. 1234 5678 9123 0000
-
-      <h2>Exp. Date (MM/YY)</h2>
-      MM YY
-      <h2>CVC</h2>
-      e.g. 123 Confirm
-    </main>
-    <aside>
+    <div class="before">
+      <heder class="show-cards">
+        <div class="back-card">
+          <p id="sh-cvc">000</p>
+        </div>
+        <div class="front-card">
+          <p id="sh-number">0000 0000 0000 0000</p>
+          <p id="sh-name">Jane Appleseed</p>
+          <p id="sh-date">00/00</p>
+        </div>
+      </heder>
+      <main class="grid-container">
+        <div class="grid-1">
+          <h4 id="card-name">Cardholder Name</h4>
+          <input type="text" placeholder=" e.g. Jane Appleseed" />
+        </div>
+        <div class="grid-2">
+          <h4 id="card-number">Card Number</h4>
+          <input type="number" placeholder="e.g. 1234 5678 9123 0000" />
+        </div>
+        <div class="grid-3">
+          <h4 id="card-exp-date">Exp. Date (MM/YY)</h4>
+          <input type="number" placeholder="MM" />
+          <input type="number" placeholder="YY" />
+        </div>
+        <div class="grid-4">
+          <h4 id="cvc-number">CVC</h4>
+          <input type="number" placeholder="e.g. 123" />
+        </div>
+        <button id="btn-con">Confirm</button>
+      </main>
+    </div>
+    <aside class="after">
       <!-- Completed state start -->
-
-      Thank you! We've added your card details Continue
+      <div class="show-cards">
+        <heder class="show-cards">
+          <div class="back-card">
+            <p id="sh-cvc">000</p>
+          </div>
+          <div class="front-card">
+            <p id="sh-number">0000 0000 0000 0000</p>
+            <p id="sh-name">Jane Appleseed</p>
+            <p id="sh-date">00/00</p>
+          </div>
+      </div>
+      <h1>Thank you!</h1>
+      <p>We've added your card details Continue</p>
     </aside>
     <div class="attribution">
       Challenge by

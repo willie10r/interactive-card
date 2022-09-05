@@ -1,3 +1,11 @@
+.before {
+  display: block;
+}
+
+.after {
+  display: none;
+}
+
 .attribution {
   font-size: 11px;
   text-align: center;
@@ -5,4 +13,8 @@
 
 .attribution a {
   color: hsl(228deg, 45%, 44%);
+}
+
+body {
+  background-image: url(../../images/bg-main-mobile.png);
 }/*# sourceMappingURL=styles.css.map */
