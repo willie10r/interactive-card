@@ -8,20 +8,30 @@
   height: 240px;
 }
 #b-card-img{
-    margin: 35px auto auto 60px;
-    width: 300px;
+    margin: 35px auto auto 80px;
+    width: 275px;
     height: 150px;
+    z-index: 1;
 }
 #sh-cvc {
     position:relative;
-    top: 00px;
-    right: 0px;
+    bottom: 105px;
+    left: 300px;
     color: aliceblue;
 }
-.front-card {
+#f-card-img {
+    // display: none;
     position: fixed;
-    bottom: 60px;
-    background-image: url(../../images/bg-card-front.png);
+    top:120px;
+    left: 20px;
     width: 275px;
-    height: 200px;
+    height: 150px;
+    z-index: 2;
+}
+.f-card-info {
+    position: fixed;
+    z-index: 3;
+    top: 105px;
+    left: 20px;
+
 }
