@@ -1,17 +1,58 @@
 @use './base';
 @use './coponents';
 @use './utilities';
+
 @media(min-width: 1440px) {
-  body{
-    display: grid;
-    grid-template-areas: 
-    "head main main"
-    "head main main";
+  .show-cards{
+    position:fixed;
+    background-image: url(../images/bg-main-desktop.png);
+    z-index: 1;
+    width: 375px;
+    height: 100%;
+
   }
-  header{
-    grid-area: head;
-  }
-  main{
-    grid-area: main;
-  }
+  #b-card-img{
+    position: fixed;
+    margin: 35px auto auto 80px;
+    top: 350px;
+    left: 150px;
+
+}
+#f-card-img {
+
+  top:200px;
+  left: 175px;
+
+}
+#sh-cvc{
+  position:fixed;
+  bottom: 215px;
+  left: 440px;
+  z-index: 4;
+
+}
+.f-card-info{
+  position: fixed;
+  top: 183px;
+  left: 175px;
+}
+.grid-container{
+ margin-top: 150px;
+margin-left: 700px;
+}
+#in-card-name,
+#in-card-number {
+    width: 400px;
+
+}
+
+.exp-mm {
+  width: 80px;
+}
+#cvc-input {
+  width: 205px;   
+}
+#btn-con{
+  width: 407px;
+}
 }
