@@ -1,3 +1,17 @@
 @use './base';
 @use './coponents';
 @use './utilities';
+@media(min-width: 1440px) {
+  body{
+    display: grid;
+    grid-template-areas: 
+    "head main main"
+    "head main main";
+  }
+  header{
+    grid-area: head;
+  }
+  main{
+    grid-area: main;
+  }
+}

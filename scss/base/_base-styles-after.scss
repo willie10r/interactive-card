@@ -1,0 +1,8 @@
+@use '../utilities' as var;
+.after {
+    display: none;
+    position: fixed;
+    top: 320px;
+    left: 30px;
+    text-align: center;
+}

@@ -1,35 +1,36 @@
 @use '../utilities' as var;
 
-.after {
-    display: none;
-}
+
 body {
     margin: 0;
+    font-family: 'Space Grotesk';
+
 }
 #sh-number{
     color: var.$newt-white;
     font-size: 20px;
     position: relative;
-    top: 80px;
+    top: 40px;
     left: 20px;
 
 }
 #sh-name{
     color: var.$newt-white;
     position: relative;
-    top: 80px;
+    top: 40px;
     left: 20px;
 }
 #sh-date{
     color: var.$newt-white;
     position: relative;
-    top: 50px;
+    top: 8px;
     left: 220px;
 }
 .grid-container {
     position: fixed;
     margin-top: 300px;
     left: 25px;
+    // we have to change the disply to none here on click
     display: grid;
     grid-template-areas: 
     "c-name c-name"
@@ -40,10 +41,12 @@ body {
 #card-name,
 #card-number{
     @include var.input-field-text;
+    font-weight: 500;
 }
 #in-card-name,
 #in-card-number {
      @include var.main-card-input;
+
 }
 
 .exp-mm {
@@ -53,6 +56,7 @@ body {
 #cvc-number{
     @include var.input-field-text;
     margin-left: 5px;
+    font-weight: 500;
 }
 
 #cvc-input {

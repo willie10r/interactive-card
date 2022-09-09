@@ -1,5 +1,11 @@
 @use '../utilities' as var;
 
+#svg-img{
+    width: 55px;
+    position: relative;
+    top: 30px;
+    left:20px;
+}
 .show-cards {
   position:fixed;
   background-image: url(../../images/bg-main-mobile.png);
