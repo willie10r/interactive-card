@@ -1,0 +1,20 @@
+@use './variables' as var;
+
+@mixin main-card-input {
+    width: 300px;
+    height: 35px;
+    border-radius: .5rem; 
+    border-color: var.$newt-light-grayish-violet;  
+}
+@mixin exp-date-input {
+    width: 59px;
+    height: 35px;
+    margin-right: 5px;
+    border-radius: .5rem; 
+    border-color: var.$newt-light-grayish-violet;  
+    text-align: center;
+}
+@mixin input-field-text {
+    margin-bottom: 10px;
+}
+

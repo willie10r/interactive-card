@@ -6,14 +6,97 @@ body {
   margin: 0;
 }
 
+#sh-number {
+  color: hsl(0deg, 0%, 100%);
+  font-size: 20px;
+  position: relative;
+  top: 80px;
+  left: 20px;
+}
+
+#sh-name {
+  color: hsl(0deg, 0%, 100%);
+  position: relative;
+  top: 80px;
+  left: 20px;
+}
+
+#sh-date {
+  color: hsl(0deg, 0%, 100%);
+  position: relative;
+  top: 50px;
+  left: 220px;
+}
+
 .grid-container {
   position: fixed;
   margin-top: 300px;
+  left: 25px;
+  display: grid;
+  grid-template-areas: "c-name c-name" "c-number c-number" "c-exp c-cvc" "btn btn";
+}
+
+#card-name,
+#card-number {
+  margin-bottom: 10px;
+}
+
+#in-card-name,
+#in-card-number {
+  width: 300px;
+  height: 35px;
+  border-radius: 0.5rem;
+  border-color: hsl(270deg, 3%, 87%);
+}
+
+.exp-mm {
+  width: 59px;
+  height: 35px;
+  margin-right: 5px;
+  border-radius: 0.5rem;
+  border-color: hsl(270deg, 3%, 87%);
+  text-align: center;
+}
+
+#card-exp-date,
+#cvc-number {
+  margin-bottom: 10px;
+  margin-left: 5px;
+}
+
+#cvc-input {
+  width: 145px;
+  height: 35px;
+  margin-left: 5px;
+  border-radius: 0.5rem;
+  border-color: hsl(270deg, 3%, 87%);
+}
+
+.grid-1 {
+  grid-area: c-name;
+}
+
+.grid-2 {
+  grid-area: c-number;
+}
+
+.grid-3 {
+  grid-area: c-exp;
+}
+
+.grid-4 {
+  grid-area: c-cvc;
+}
+
+.grid-5 {
+  grid-area: btn;
 }
 
 footer {
   position: fixed;
   bottom: 0;
+  display: block;
+  margin-left: 55px;
 }
 
 .attribution {
@@ -23,6 +106,15 @@ footer {
 
 .attribution a {
   color: hsl(228deg, 45%, 44%);
+}
+
+#btn-con {
+  width: 308px;
+  height: 50px;
+  border-radius: 0.5rem;
+  margin-top: 30px;
+  color: hsl(0deg, 0%, 100%);
+  background-color: hsl(278deg, 68%, 11%);
 }
 
 .show-cards {
@@ -44,7 +136,7 @@ footer {
   position: relative;
   bottom: 105px;
   left: 300px;
-  color: aliceblue;
+  color: hsl(0deg, 0%, 100%);
 }
 
 #f-card-img {

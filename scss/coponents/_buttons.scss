@@ -1,1 +1,11 @@
 @use '../utilities' as var;
+
+#btn-con{
+  width: 308px;
+  height: 50px;
+  border-radius: .5rem;
+  margin-top: 30px;
+  color: var.$newt-white;
+  background-color: var.$newt-very-dark-violet;
+
+}

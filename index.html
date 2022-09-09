@@ -30,26 +30,25 @@
       <main class="grid-container">
         <div class="grid-1">
           <h4 id="card-name">Cardholder Name</h4>
-          <input type="text" placeholder=" e.g. Jane Appleseed" />
+          <input id="in-card-name" type="text" placeholder=" e.g. Jane Appleseed" />
         </div>
         <div class="grid-2">
           <h4 id="card-number">Card Number</h4>
-          <input type="number" placeholder="e.g. 1234 5678 9123 0000" />
+          <input id="in-card-number" type="number" placeholder="e.g. 1234 5678 9123 0000" />
         </div>
         <div class="grid-3">
           <h4 id="card-exp-date">Exp. Date (MM/YY)</h4>
-          <input type="number" placeholder="MM" />
-          <input type="number" placeholder="YY" />
+          <input class="exp-mm" class='exp-dates' type="number" placeholder="MM" />
+          <input class='exp-mm' type="number" placeholder="YY" />
         </div>
         <div class="grid-4">
           <h4 id="cvc-number">CVC</h4>
-          <input type="number" placeholder="e.g. 123" />
+          <input id="cvc-input" type="number" placeholder="e.g. 123" />
         </div>
-        <button id="btn-con">Confirm</button>
+        <button class="grid-5" id="btn-con">Confirm</button>
       </main>
     </div>
     <aside class="after">
-      <!-- Completed state start -->
       <div class="show-cards">
         <heder class="show-cards">
           <div class="back-card">
