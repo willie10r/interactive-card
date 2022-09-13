@@ -15,6 +15,13 @@
     text-align: center;
 }
 @mixin input-field-text {
-    margin-bottom: 10px;
+    margin-top: 7px;
+    margin-bottom: 7px;
 }
-
+@mixin er-message {
+    display: none;
+    font-size: small;
+    font-weight: 100;
+    color: var.$prim-error-red;
+    margin: 2px auto 0px 5px;
+}

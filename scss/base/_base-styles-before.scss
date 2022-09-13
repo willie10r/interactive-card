@@ -82,6 +82,13 @@ body {
 .grid-5{
     grid-area:btn;
 }
+#er-name,
+#er-number,
+#er-exp,
+#er-cvc {
+    @include var.er-message;
+}
+
 footer {
     position: fixed;
     bottom: 0;
