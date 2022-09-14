@@ -8,6 +8,9 @@ let erName = document.querySelector('#er-name');
 let erNumber = document.querySelector('#er-number');
 let erExp = document.querySelector('#er-exp');
 let erCvc = document.querySelector('#er-cvc');
+let activeNumber = document.querySelector('sh-number');
+let activeName = document.querySelector('#sh-name');
+let activeExp = document.querySelector('sh-date');
 let stringCheck = '' ;
 let numberCheck = 0 ;
 let checkingLeng = 'no';
@@ -49,9 +52,11 @@ document.onclick = (e) => {
             onlyLetters(cdName.value);
             switch(stringCheck){
                 case true:
+                    activeName.innerHTML = cdName.value;
                     erName.style.display = 'none';
                     break;
                 default:
+                    numberOfBadFields++;
                     cdName.style.borderColor = 'red';
                     cdName.style.color = 'red';
                     erName.style.display = 'block';
@@ -62,9 +67,11 @@ document.onclick = (e) => {
             onlyNumbers(cdNumber.value);
             switch(numberCheck){
                 case true:
+                    activeNumber.innerHTML = cdNumber.value;
                     erNumber.style.display = 'none';
                     break;
                 default:
+                    numberOfBadFields++;
                     cdNumber.style.borderColor = 'red';
                     cdNumber.style.color = 'red';
                     erNumber.style.display = 'block';
@@ -80,6 +87,7 @@ document.onclick = (e) => {
                     console.log(checkingLeng);
                     break;
                 default:
+                    numberOfBadFields++;
                     cdExpMonth.style.borderColor = 'red';
                     cdExpMonth.style.color = 'red';
                     erExp.style.display = 'block';
@@ -95,6 +103,7 @@ document.onclick = (e) => {
                     console.log(checkingLeng);
                     break;
                 default:
+                    numberOfBadFields++;
                     cdExpYear.style.borderColor = 'red';
                     cdExpYear.style.color = 'red';
                     erExp.style.display = 'block';
@@ -111,12 +120,14 @@ document.onclick = (e) => {
                     console.log(checkingLeng);
                     break;
                 default:
+                    numberOfBadFields++;
                     cdCvc.style.borderColor = 'red';
                     cdCvc.style.color = 'red';
                     erCvc.style.display = 'block';
                     console.log('cvc number bad');
                     break;
             }
+            console.log(numberOfBadFields);
         break;
         default: 
         console.log('sub btn not clicked');
