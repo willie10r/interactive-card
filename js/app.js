@@ -52,7 +52,9 @@ document.onclick = (e) => {
             onlyLetters(cdName.value);
             switch(stringCheck){
                 case true:
-                    activeName.innerHTML = cdName.value;
+                    activeName.remove();
+                    activeName.append(cdName.value);
+                    activeName.setAttribute('id','sh-name');
                     erName.style.display = 'none';
                     break;
                 default:
@@ -67,6 +69,7 @@ document.onclick = (e) => {
             onlyNumbers(cdNumber.value);
             switch(numberCheck){
                 case true:
+                    
                     activeNumber.innerHTML = cdNumber.value;
                     erNumber.style.display = 'none';
                     break;
