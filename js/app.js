@@ -17,42 +17,44 @@ let checkingLeng = 'no';
 let numberOfBadFields = 0;
 
 
+       //checking for string only on the card name input field
+function onlyLetters(str) { 
+   stringCheck = /^[a-z A-Z]+$/.test(str);
+   return stringCheck
+   };
+        //checking for numbers only
+function onlyNumbers(num) { 
+   numberCheck = /^[0-9 ]+$/.test(num);
+   return numberCheck
+   };
+function twoNumber(nums) {
+   if(nums.value.length === 2){
+      checkingLeng = 'good';
+      }else{
+       checkingLeng = 'nope';
+      }
+    return checkingLeng;
+   };
+function threeNumber(nums) {
+    if(nums.value.length === 3){
+      checkingLeng = 'good';
+      }else{
+      checkingLeng = 'nope';
+      }
+    return checkingLeng;
+    };
+
 document.onclick = (e) => {
 
     switch (e.target.id) {
         case btnCon.id:
             
-                    //checking for string only on the card name input field
-            function onlyLetters(str) { 
-                stringCheck = /^[a-z A-Z]+$/.test(str);
-                return stringCheck
-            };
-                //checking for numbers only
-            function onlyNumbers(num) { 
-                numberCheck = /^[0-9 ]+$/.test(num);
-                return numberCheck
-                };
-            function twoNumber(nums) {
-                if(nums.value.length === 2){
-                    checkingLeng = 'good';
-                }else{
-                    checkingLeng = 'nope';
-                }
-                return checkingLeng;
-            };
-            function threeNumber(nums) {
-                if(nums.value.length === 3){
-                    checkingLeng = 'good';
-                }else{
-                    checkingLeng = 'nope';
-                }
-                return checkingLeng;
-            };
+             
             //name section
             onlyLetters(cdName.value);
             switch(stringCheck){
                 case true:
-                    activeName.remove();
+                    // activeName.removeChild(cdName);
                     activeName.append(cdName.value);
                     activeName.setAttribute('id','sh-name');
                     erName.style.display = 'none';
@@ -70,7 +72,7 @@ document.onclick = (e) => {
             switch(numberCheck){
                 case true:
                     
-                    activeNumber.innerHTML = cdNumber.value;
+                    // activeNumber.innerHTML = cdNumber.value;
                     erNumber.style.display = 'none';
                     break;
                 default:
