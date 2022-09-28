@@ -1,3 +1,4 @@
+const fCard = document.querySelector('#f-card-info');
 const btnCon = document.querySelector('#btn-con');
 const cdName = document.querySelector('#in-card-name');
 const cdNumber = document.querySelector('#in-card-number');
@@ -8,14 +9,32 @@ let erName = document.querySelector('#er-name');
 let erNumber = document.querySelector('#er-number');
 let erExp = document.querySelector('#er-exp');
 let erCvc = document.querySelector('#er-cvc');
-let activeNumber = document.querySelector('sh-number');
+let activeNumber = document.querySelector('#sh-number');
 let activeName = document.querySelector('#sh-name');
-let activeExp = document.querySelector('sh-date');
+let activeExp = document.querySelector('#sh-date');
 let stringCheck = '' ;
 let numberCheck = 0 ;
 let checkingLeng = 'no';
 let numberOfBadFields = 0;
+let actName = document.createTextNode('Jane Appleseed');
+let actNumber = document.createTextNode('0000 0000 0000 0000');
+let actExp = document.createTextNode('00/00');
 
+
+//active changing card parts
+function trying(partChange, nam) {
+  partChange.appendChild(nam);
+
+};
+trying(activeName, actName);
+trying(activeNumber, actNumber);
+trying(activeExp, actExp);
+
+function reps(partChange, nam) {
+    partChange.replaceChild(nam, partChange.childNodes[0]);
+};
+
+  
 
        //checking for string only on the card name input field
 function onlyLetters(str) { 
@@ -30,19 +49,20 @@ function onlyNumbers(num) {
 function twoNumber(nums) {
    if(nums.value.length === 2){
       checkingLeng = 'good';
-      }else{
+    }else{
        checkingLeng = 'nope';
-      }
+    }
     return checkingLeng;
    };
 function threeNumber(nums) {
     if(nums.value.length === 3){
       checkingLeng = 'good';
-      }else{
+    }else{
       checkingLeng = 'nope';
-      }
+    }
     return checkingLeng;
     };
+
 
 document.onclick = (e) => {
 
@@ -54,9 +74,8 @@ document.onclick = (e) => {
             onlyLetters(cdName.value);
             switch(stringCheck){
                 case true:
-                    // activeName.removeChild(cdName);
-                    activeName.append(cdName.value);
-                    activeName.setAttribute('id','sh-name');
+                    actName = document.createTextNode(cdName.value);
+                    reps(activeName, actName);
                     erName.style.display = 'none';
                     break;
                 default:
@@ -71,8 +90,8 @@ document.onclick = (e) => {
             onlyNumbers(cdNumber.value);
             switch(numberCheck){
                 case true:
-                    
-                    // activeNumber.innerHTML = cdNumber.value;
+                    actNumber = document.createTextNode(cdNumber.value);
+                    reps(activeNumber, actNumber);
                     erNumber.style.display = 'none';
                     break;
                 default:
