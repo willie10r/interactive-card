@@ -12,6 +12,7 @@ let erCvc = document.querySelector('#er-cvc');
 let activeNumber = document.querySelector('#sh-number');
 let activeName = document.querySelector('#sh-name');
 let activeExp = document.querySelector('#sh-date');
+let activeCvc = document.querySelector('#sh-cvc');
 let stringCheck = '' ;
 let numberCheck = 0 ;
 let checkingLeng = 'no';
@@ -19,6 +20,7 @@ let numberOfBadFields = 0;
 let actName = document.createTextNode('Jane Appleseed');
 let actNumber = document.createTextNode('0000 0000 0000 0000');
 let actExp = document.createTextNode('00/00');
+let actCvc = document.createTextNode('000');
 
 
 //active changing card parts
@@ -26,15 +28,10 @@ function trying(partChange, nam) {
   partChange.appendChild(nam);
 
 };
-trying(activeName, actName);
-trying(activeNumber, actNumber);
-trying(activeExp, actExp);
 
 function reps(partChange, nam) {
     partChange.replaceChild(nam, partChange.childNodes[0]);
 };
-
-  
 
        //checking for string only on the card name input field
 function onlyLetters(str) { 
@@ -62,8 +59,18 @@ function threeNumber(nums) {
     }
     return checkingLeng;
     };
+trying(activeName, actName);
+trying(activeNumber, actNumber);
+trying(activeExp, actExp);
+trying(activeCvc, actCvc);
 
-
+cdNumber.addEventListener('keyup', function(e){
+    
+    if (e.key != 'Backspace' && (cdNumber.value.length === 4 || cdNumber.value.length === 9 || cdNumber.value.length === 14)){
+    cdNumber.value += ' ';
+    }
+  });
+  
 document.onclick = (e) => {
 
     switch (e.target.id) {
@@ -122,6 +129,8 @@ document.onclick = (e) => {
             onlyNumbers(cdExpYear.value);
             switch(numberCheck){
                 case true:
+                    actExp = document.createTextNode(`${cdExpMonth.value}/${cdExpYear.value}`);
+                    reps(activeExp, actExp);
                     erExp.style.display = 'none';
                     twoNumber(cdExpYear);
                     console.log(checkingLeng);
@@ -139,6 +148,8 @@ document.onclick = (e) => {
             switch(numberCheck){
                
                 case true:
+                    actCvc = document.createTextNode(cdCvc.value);
+                    reps(activeCvc, actCvc);
                     erCvc.style.display = 'none';
                     threeNumber(cdCvc);
                     console.log(checkingLeng);
