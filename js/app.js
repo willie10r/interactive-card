@@ -5,6 +5,7 @@ const cdNumber = document.querySelector('#in-card-number');
 const cdExpMonth = document.querySelector('#cd-exp-mm');
 const cdExpYear = document.querySelector('#cd-exp-yy');
 const cdCvc = document.querySelector('#cvc-input');
+const thankYou = document.querySelector('.grid-container');
 let erName = document.querySelector('#er-name');
 let erNumber = document.querySelector('#er-number');
 let erExp = document.querySelector('#er-exp');
@@ -16,23 +17,19 @@ let activeCvc = document.querySelector('#sh-cvc');
 let stringCheck = '' ;
 let numberCheck = 0 ;
 let checkingLeng = 'no';
-let numberOfBadFields = 0;
+let numberOfGoodFields = 0;
 let actName = document.createTextNode('Jane Appleseed');
 let actNumber = document.createTextNode('0000 0000 0000 0000');
 let actExp = document.createTextNode('00/00');
 let actCvc = document.createTextNode('000');
 
-
 //active changing card parts
 function trying(partChange, nam) {
   partChange.appendChild(nam);
-
 };
-
 function reps(partChange, nam) {
     partChange.replaceChild(nam, partChange.childNodes[0]);
 };
-
        //checking for string only on the card name input field
 function onlyLetters(str) { 
    stringCheck = /^[a-z A-Z]+$/.test(str);
@@ -59,37 +56,39 @@ function threeNumber(nums) {
     }
     return checkingLeng;
     };
+function goodColor(itemChange, itemHide) {
+    itemHide.style.display = 'none';
+    itemChange.style.borderColor = '#776E7C';
+    itemChange.style.color = '#776E7C';
+};
+function errorColor(itemChange, itemShow) {
+    itemShow.style.display = 'block';
+    itemChange.style.borderColor = 'red';
+    itemChange.style.color = 'red'; 
+};
 trying(activeName, actName);
 trying(activeNumber, actNumber);
 trying(activeExp, actExp);
 trying(activeCvc, actCvc);
-
-cdNumber.addEventListener('keyup', function(e){
-    
+cdNumber.addEventListener('keyup', function(e) {
     if (e.key != 'Backspace' && (cdNumber.value.length === 4 || cdNumber.value.length === 9 || cdNumber.value.length === 14)){
     cdNumber.value += ' ';
     }
-  });
-  
+});
 document.onclick = (e) => {
-
     switch (e.target.id) {
         case btnCon.id:
-            
-             
             //name section
             onlyLetters(cdName.value);
             switch(stringCheck){
                 case true:
                     actName = document.createTextNode(cdName.value);
                     reps(activeName, actName);
-                    erName.style.display = 'none';
+                    goodColor(cdName, erName);
+                    numberOfGoodFields++
                     break;
                 default:
-                    numberOfBadFields++;
-                    cdName.style.borderColor = 'red';
-                    cdName.style.color = 'red';
-                    erName.style.display = 'block';
+                    errorColor(cdName, erName);
                     console.log('name not good');
                     break;
             }
@@ -99,13 +98,11 @@ document.onclick = (e) => {
                 case true:
                     actNumber = document.createTextNode(cdNumber.value);
                     reps(activeNumber, actNumber);
-                    erNumber.style.display = 'none';
+                    goodColor(cdNumber, erNumber);
+                    numberOfGoodFields++
                     break;
                 default:
-                    numberOfBadFields++;
-                    cdNumber.style.borderColor = 'red';
-                    cdNumber.style.color = 'red';
-                    erNumber.style.display = 'block';
+                    errorColor(cdNumber, erNumber);
                     console.log('card number bad');
                     break;
             }
@@ -113,15 +110,13 @@ document.onclick = (e) => {
             onlyNumbers(cdExpMonth.value);
             switch(numberCheck){
                 case true:
-                    erExp.style.display = 'none';
                     twoNumber(cdExpMonth);
                     console.log(checkingLeng);
+                    goodColor(cdExpMonth, erExp);
+                    numberOfGoodFields++
                     break;
                 default:
-                    numberOfBadFields++;
-                    cdExpMonth.style.borderColor = 'red';
-                    cdExpMonth.style.color = 'red';
-                    erExp.style.display = 'block';
+                    errorColor(cdExpMonth, erExp);
                     console.log('exp month bad');
                     break;
             }
@@ -131,48 +126,46 @@ document.onclick = (e) => {
                 case true:
                     actExp = document.createTextNode(`${cdExpMonth.value}/${cdExpYear.value}`);
                     reps(activeExp, actExp);
-                    erExp.style.display = 'none';
+                   
                     twoNumber(cdExpYear);
+                    goodColor(cdExpYear, erExp);
+                    numberOfGoodFields++
                     console.log(checkingLeng);
                     break;
                 default:
-                    numberOfBadFields++;
-                    cdExpYear.style.borderColor = 'red';
-                    cdExpYear.style.color = 'red';
-                    erExp.style.display = 'block';
+                    errorColor(cdExpYear, erExp);
                     console.log('exp year bad');
                     break;
             }
             //cvc section
             onlyNumbers(cdCvc.value);
             switch(numberCheck){
-               
                 case true:
                     actCvc = document.createTextNode(cdCvc.value);
                     reps(activeCvc, actCvc);
-                    erCvc.style.display = 'none';
                     threeNumber(cdCvc);
+                    goodColor(cdCvc, erCvc);
+                    numberOfGoodFields++
                     console.log(checkingLeng);
                     break;
                 default:
-                    numberOfBadFields++;
-                    cdCvc.style.borderColor = 'red';
-                    cdCvc.style.color = 'red';
-                    erCvc.style.display = 'block';
+                    errorColor(cdCvc, erCvc);
                     console.log('cvc number bad');
                     break;
             }
-            console.log(numberOfBadFields);
+            console.log(numberOfGoodFields);
         break;
         default: 
         console.log('sub btn not clicked');
         break;
     }
-    switch(numberOfBadFields) {
-       case 0: 
+    switch(numberOfGoodFields) {
+       case 5: 
          //add the screen change if all the fields are correct
+         thankYou.style.display = 'none';
         break;
        default:
         break;
     };
+    numberOfGoodFields = 0;
 };
