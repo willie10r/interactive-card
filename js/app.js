@@ -5,7 +5,8 @@ const cdNumber = document.querySelector('#in-card-number');
 const cdExpMonth = document.querySelector('#cd-exp-mm');
 const cdExpYear = document.querySelector('#cd-exp-yy');
 const cdCvc = document.querySelector('#cvc-input');
-const thankYou = document.querySelector('.grid-container');
+const hidePage = document.querySelector('.grid-container');
+const thankYou = document.querySelector('.after');
 let erName = document.querySelector('#er-name');
 let erNumber = document.querySelector('#er-number');
 let erExp = document.querySelector('#er-exp');
@@ -100,6 +101,10 @@ document.onclick = (e) => {
                     reps(activeNumber, actNumber);
                     goodColor(cdNumber, erNumber);
                     numberOfGoodFields++
+                    if(cdNumber.value.length != 19) {
+                        numberOfGoodFields--;
+                        errorColor(cdNumber, erNumber);
+                        };
                     break;
                 default:
                     errorColor(cdNumber, erNumber);
@@ -114,6 +119,10 @@ document.onclick = (e) => {
                     console.log(checkingLeng);
                     goodColor(cdExpMonth, erExp);
                     numberOfGoodFields++
+                    if(cdExpMonth.value.length != 2) {
+                        numberOfGoodFields--;
+                        errorColor(cdExpMonth, erExp);
+                        };
                     break;
                 default:
                     errorColor(cdExpMonth, erExp);
@@ -130,6 +139,10 @@ document.onclick = (e) => {
                     twoNumber(cdExpYear);
                     goodColor(cdExpYear, erExp);
                     numberOfGoodFields++
+                    if(cdExpYear.value.length != 2) {
+                        numberOfGoodFields--;
+                        errorColor(cdExpYear, erExp);
+                        };
                     console.log(checkingLeng);
                     break;
                 default:
@@ -145,8 +158,12 @@ document.onclick = (e) => {
                     reps(activeCvc, actCvc);
                     threeNumber(cdCvc);
                     goodColor(cdCvc, erCvc);
-                    numberOfGoodFields++
+                    numberOfGoodFields++;
                     console.log(checkingLeng);
+                    if(cdCvc.value.length != 3) {
+                    numberOfGoodFields--;
+                    errorColor(cdCvc, erCvc);
+                    };
                     break;
                 default:
                     errorColor(cdCvc, erCvc);
@@ -162,7 +179,8 @@ document.onclick = (e) => {
     switch(numberOfGoodFields) {
        case 5: 
          //add the screen change if all the fields are correct
-         thankYou.style.display = 'none';
+         hidePage.style.display = 'none';
+         thankYou.style.display = 'block';
         break;
        default:
         break;
