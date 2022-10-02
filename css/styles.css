@@ -136,7 +136,8 @@ footer {
   color: hsl(228deg, 45%, 44%);
 }
 
-#btn-con {
+#btn-con,
+#btn-cons {
   width: 308px;
   height: 50px;
   border-radius: 0.5rem;
