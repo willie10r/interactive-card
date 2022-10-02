@@ -17,6 +17,7 @@ Would like to rework the javscript for a more rebust error catching when collect
 In the future Iwould like to redo the project in react
 
 socials
-[github](https://github.com/Willie10r)
-linkedin:
-instagram:
+[Github](https://github.com/Willie10r)
+[Linkedin](https://www.linkedin.com/in/willie-morris-0b2571229/)
+[Instagram](https://www.instagram.com/zx10rwillie/)
+[FrontendMentor](https://www.frontendmentor.io/profile/Willie10r)
