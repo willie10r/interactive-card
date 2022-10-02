@@ -83,7 +83,7 @@ document.onclick = (e) => {
             onlyLetters(cdName.value);
             switch(stringCheck){
                 case true:
-                    actName = document.createTextNode(cdName.value);
+                    actName = document.createTextNode(cdName.value.toUpperCase());
                     reps(activeName, actName);
                     goodColor(cdName, erName);
                     numberOfGoodFields++
