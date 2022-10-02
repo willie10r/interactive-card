@@ -11,21 +11,28 @@ body {
     color: var.$newt-white;
     font-size: 20px;
     position: relative;
-    top: 40px;
-    left: 20px;
+    top: 30px;
+    left: 25px;
 
 }
 #sh-name{
     color: var.$newt-white;
     position: relative;
-    top: 40px;
-    left: 20px;
+    top: 30px;
+    left: 25px;
 }
 #sh-date{
     color: var.$newt-white;
     position: relative;
-    top: 8px;
-    left: 220px;
+    top: -5px;
+    left: 210px;
+
+}
+#sh-cvc {
+    position:relative;
+    bottom: 108px;
+    left: 295px;
+    color: var.$newt-white;
 }
 .grid-container {
     position: fixed;

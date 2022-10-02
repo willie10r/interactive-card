@@ -171,6 +171,7 @@ document.onclick = (e) => {
                     break;
             }
             console.log(numberOfGoodFields);
+            e.target.style.backgroundColor = '#776E7C';
         break;
         default: 
         console.log('sub btn not clicked');

@@ -8,22 +8,29 @@ body {
   color: hsl(0deg, 0%, 100%);
   font-size: 20px;
   position: relative;
-  top: 40px;
-  left: 20px;
+  top: 30px;
+  left: 25px;
 }
 
 #sh-name {
   color: hsl(0deg, 0%, 100%);
   position: relative;
-  top: 40px;
-  left: 20px;
+  top: 30px;
+  left: 25px;
 }
 
 #sh-date {
   color: hsl(0deg, 0%, 100%);
   position: relative;
-  top: 8px;
-  left: 220px;
+  top: -5px;
+  left: 210px;
+}
+
+#sh-cvc {
+  position: relative;
+  bottom: 108px;
+  left: 295px;
+  color: hsl(0deg, 0%, 100%);
 }
 
 .grid-container {
@@ -160,13 +167,6 @@ footer {
   z-index: 1;
 }
 
-#sh-cvc {
-  position: relative;
-  bottom: 105px;
-  left: 300px;
-  color: hsl(0deg, 0%, 100%);
-}
-
 #f-card-img {
   position: fixed;
   top: 120px;
@@ -228,5 +228,8 @@ footer {
   }
   #btn-con {
     width: 407px;
+  }
+  .after {
+    left: 600px;
   }
 }/*# sourceMappingURL=styles.css.map */
