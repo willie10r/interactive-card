@@ -1,7 +1,7 @@
 # interactive-card
 
 ##summery<br/>
-The interactive card project was one of the more challenging projects i have worked on up into the point.
+The interactive card project was one of the more challenging projects i have worked on up to this point.
 The challenging parts for me were the layering of all the changing numbers and backgrounds.
 
 ##processes and tools used<br/>
